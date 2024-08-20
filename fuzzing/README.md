@@ -2,10 +2,10 @@
 
 ## Setup
 
-Change `~/ledger/app-kaspa` to wherever you actual `app-kaspa` folder is.
+Change `~/ledger/app-karlsen` to wherever you actual `app-karlsen` folder is.
 
 ```
-docker run --rm -it -v ~/kaspa/ledger/app-kaspa:/app ghcr.io/ledgerhq/ledger-app-builder/ledger-app-builder-legacy:latest bash
+docker run --rm -it -v ~/karlsen/ledger/app-karlsen:/app ghcr.io/ledgerhq/ledger-app-builder/ledger-app-builder-legacy:latest bash
 ```
 
 ## Compilation
@@ -39,7 +39,7 @@ A pre-compiled version of the ones this fuzzing needs is in `llvm-headers`.
 
 Update your docker run to:
 ```
-docker run -it -v ~/ledger/app-kaspa:/app -v ~/llvm-project:/tmp/llvm-project ghcr.io/ledgerhq/ledger-app-builder/ledger-app-dev-tools:latest bash
+docker run -it -v ~/ledger/app-karlsen:/app -v ~/llvm-project:/tmp/llvm-project ghcr.io/ledgerhq/ledger-app-builder/ledger-app-dev-tools:latest bash
 apk add build-base libc-dev linux-headers libexecinfo-dev compiler-rt
 apk del llvm15
 ```

@@ -59,7 +59,7 @@ static void test_script_public_key_to_address(void **state) {
 
     script_public_key_to_address(schnorr_address, sizeof(schnorr_address), schnorr_spk, sizeof(schnorr_spk));
 
-    assert_string_equal((char *) schnorr_address, "kaspa:qrazhptjkcvrv23xz2xm8z8sfmg6jhxvmrscn7wph4k9we5tzxedwfxf0v6f8");
+    assert_string_equal((char *) schnorr_address, "karlsen:qrazhptjkcvrv23xz2xm8z8sfmg6jhxvmrscn7wph4k9we5tzxedwfxf0v6f8");
 
     uint8_t p2sh_spk[35] = {
         OP_BLAKE2B, 0x20,
@@ -72,7 +72,7 @@ static void test_script_public_key_to_address(void **state) {
 
     script_public_key_to_address(p2sh_address, sizeof(p2sh_address), p2sh_spk, sizeof(p2sh_spk));
 
-    assert_string_equal((char *) p2sh_address, "kaspa:precqv0krj3r6uyyfa36ga7s0u9jct0v4wg8ctsfde2gkrsgwgw8jgxfzfc98");
+    assert_string_equal((char *) p2sh_address, "karlsen:precqv0krj3r6uyyfa36ga7s0u9jct0v4wg8ctsfde2gkrsgwgw8jgxfzfc98");
 
     uint8_t ecdsa_even_spk[35] = {
         0x21, 0x02,
@@ -87,7 +87,7 @@ static void test_script_public_key_to_address(void **state) {
 
     script_public_key_to_address(ecdsa_even_address, sizeof(ecdsa_even_address), ecdsa_even_spk, sizeof(ecdsa_even_spk));
 
-    assert_string_equal((char *) ecdsa_even_address, "kaspa:qypdtlw845g6vhgtheug9lpahjgmtpsarqkueeul0sd7t07npfnhe4s7fd82n0v");
+    assert_string_equal((char *) ecdsa_even_address, "karlsen:qypdtlw845g6vhgtheug9lpahjgmtpsarqkueeul0sd7t07npfnhe4s7fd82n0v");
 
     uint8_t ecdsa_odd_spk[35] = {
         0x21, 0x03,
@@ -102,7 +102,7 @@ static void test_script_public_key_to_address(void **state) {
 
     script_public_key_to_address(ecdsa_odd_address, sizeof(ecdsa_odd_address), ecdsa_odd_spk, sizeof(ecdsa_odd_spk));
 
-    assert_string_equal((char *) ecdsa_odd_address, "kaspa:qyp7xyqdshh6aylqct7x2je0pse4snep8glallgz8jppyaajz7y7qeq4x79fq4z");
+    assert_string_equal((char *) ecdsa_odd_address, "karlsen:qyp7xyqdshh6aylqct7x2je0pse4snep8glallgz8jppyaajz7y7qeq4x79fq4z");
 }
 
 static void test_calc_fees(void **state) {

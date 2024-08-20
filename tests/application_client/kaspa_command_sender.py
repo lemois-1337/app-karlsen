@@ -5,8 +5,8 @@ from contextlib import contextmanager
 from ragger.backend.interface import BackendInterface, RAPDU
 from ragger.bip import pack_derivation_path
 
-from .kaspa_transaction import Transaction
-from .kaspa_message import PersonalMessage
+from .karlsen_transaction import Transaction
+from .karlsen_message import PersonalMessage
 
 
 MAX_APDU_LEN: int = 255

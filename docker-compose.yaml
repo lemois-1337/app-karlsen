@@ -40,9 +40,9 @@ services:
       dockerfile: Dockerfile.speculos
     volumes:
     - ./bin:/speculos/app
-    - ./:/tmp/kaspa
+    - ./:/tmp/karlsen
     entrypoint: bash
-    command: -c "cd /tmp/kaspa/tests && pytest --tb=short --device ${TEST_DEVICE}"
+    command: -c "cd /tmp/karlsen/tests && pytest --tb=short --device ${TEST_DEVICE}"
 
   # unit tests
   utest:

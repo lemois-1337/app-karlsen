@@ -10,9 +10,9 @@ The base unit in Kaspa is the KAS and the smallest unit used in raw transaction 
 
 ## Address format
 
-Kaspa addresses begin with `kaspa:` followed by 61 base32 characters for a total of `67` bytes for Schnorr-signed and P2SH addresses. P2SH addresses are supported only as a send address by this app.
+Kaspa addresses begin with `karlsen:` followed by 61 base32 characters for a total of `67` bytes for Schnorr-signed and P2SH addresses. P2SH addresses are supported only as a send address by this app.
 
-For ECDSA-signed addresses (supported by this app only as a send address), it begins with `kaspa:` followed by 63 bytes for a total of `69` bytes.
+For ECDSA-signed addresses (supported by this app only as a send address), it begins with `karlsen:` followed by 63 bytes for a total of `69` bytes.
 
 ## Structure
 
@@ -73,7 +73,7 @@ Total bytes: 43 (max)
 
 [Schnorr](https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki) is used to sign transaction on the [SECP-256k1](https://www.secg.org/sec2-v2.pdf#subsubsection.2.4.1) curve.
 
-It is used to sign the [SigHash](https://kaspa-mdbook.aspectron.com/transactions/sighashes.html).
+It is used to sign the [SigHash](https://karlsen-mdbook.aspectron.com/transactions/sighashes.html).
 
 ### Fee
 
@@ -81,4 +81,4 @@ The fee is the difference between the sum of input values and the sum of the out
 
 ## Links
 
-- Kaspa Transaction: https://kaspa-mdbook.aspectron.com/transactions.html
+- Kaspa Transaction: https://karlsen-mdbook.aspectron.com/transactions.html

@@ -44,7 +44,7 @@ static void test_schnorr_address_from_public_key(void **state) {
 
     address_from_pubkey(public_key, SCHNORR, address, SCHNORR_ADDRESS_LEN);
 
-    assert_string_equal((char *) address, "kaspa:qqs7krzzwqfgk9kf830smtzg64s9rf3r0khfj76cjynf2pfgrr35saatu88xq");
+    assert_string_equal((char *) address, "karlsen:qqs7krzzwqfgk9kf830smtzg64s9rf3r0khfj76cjynf2pfgrr35saatu88xq");
 
     uint8_t public_key2[] = {
         0xFA, 0x2B, 0x85, 0x72, 0xB6, 0x18, 0x36, 0x2A, 0x26, 0x12, 0x8D, 0xB3, 0x88, 0xF0, 0x4E, 0xD1,
@@ -57,7 +57,7 @@ static void test_schnorr_address_from_public_key(void **state) {
 
     address_from_pubkey(public_key2, SCHNORR, address2, SCHNORR_ADDRESS_LEN);
 
-    assert_string_equal((char *) address2, "kaspa:qrazhptjkcvrv23xz2xm8z8sfmg6jhxvmrscn7wph4k9we5tzxedwfxf0v6f8");
+    assert_string_equal((char *) address2, "karlsen:qrazhptjkcvrv23xz2xm8z8sfmg6jhxvmrscn7wph4k9we5tzxedwfxf0v6f8");
 }
 
 static void test_p2sh_address_from_public_key(void **state) {
@@ -74,7 +74,7 @@ static void test_p2sh_address_from_public_key(void **state) {
 
     address_from_pubkey(public_key, P2SH, address, SCHNORR_ADDRESS_LEN);
 
-    assert_string_equal((char *) address, "kaspa:precqv0krj3r6uyyfa36ga7s0u9jct0v4wg8ctsfde2gkrsgwgw8jgxfzfc98");
+    assert_string_equal((char *) address, "karlsen:precqv0krj3r6uyyfa36ga7s0u9jct0v4wg8ctsfde2gkrsgwgw8jgxfzfc98");
 }
 
 static void test_ecdsa_address_from_public_key(void **state) {
@@ -90,7 +90,7 @@ static void test_ecdsa_address_from_public_key(void **state) {
 
     address_from_pubkey(public_key_even, ECDSA, address_even, ECDSA_ADDRESS_LEN);
 
-    assert_string_equal((char *) address_even, "kaspa:qypdtlw845g6vhgtheug9lpahjgmtpsarqkueeul0sd7t07npfnhe4s7fd82n0v");
+    assert_string_equal((char *) address_even, "karlsen:qypdtlw845g6vhgtheug9lpahjgmtpsarqkueeul0sd7t07npfnhe4s7fd82n0v");
 
     // Odd Y-coord test case
     uint8_t public_key_odd[] = {
@@ -104,7 +104,7 @@ static void test_ecdsa_address_from_public_key(void **state) {
 
     address_from_pubkey(public_key_odd, ECDSA, address_odd, ECDSA_ADDRESS_LEN);
 
-    assert_string_equal((char *) address_odd, "kaspa:qyp7xyqdshh6aylqct7x2je0pse4snep8glallgz8jppyaajz7y7qeq4x79fq4z");
+    assert_string_equal((char *) address_odd, "karlsen:qyp7xyqdshh6aylqct7x2je0pse4snep8glallgz8jppyaajz7y7qeq4x79fq4z");
 }
 
 static void test_invalid_type(void **state) {

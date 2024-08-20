@@ -57,13 +57,13 @@ function build_app() {
 }
 
 function init_companion() {
-    if [ -d "kaspa-ledger-webapp" ]; then
-        echo "kaspa-ledger-webapp already exists $(pwd)"
+    if [ -d "karlsen-ledger-webapp" ]; then
+        echo "karlsen-ledger-webapp already exists $(pwd)"
     else
-        git clone https://github.com/coderofstuff/kaspa-ledger-webapp.git
+        git clone https://github.com/coderofstuff/karlsen-ledger-webapp.git
     fi
 
-    cd kaspa-ledger-webapp
+    cd karlsen-ledger-webapp
 
     npm install
     npm run start

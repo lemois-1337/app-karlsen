@@ -48,7 +48,7 @@ Raw response looks like: `4b617370619000`
 | --- | --- | --- | --- | --- | --- |
 | 0xE0 | 0x05 | 0x00 (no display) <br> 0x01 (display) | 0x00 | 0x15 | `path len (1 byte)` \|\|<br>`purpose (4 bytes)` \|\|<br> `coin_type (4 bytes)` \|\|<br> `account (4 bytes)` \|\|<br> `type (4 bytes)` \|\|<br>`index (4 bytes)` |
 
-Keys for kaspa normally use the derivation path `m/44'/111111'/<account>'/<type>/<index>`. This command will accept these as inputs:
+Keys for karlsen normally use the derivation path `m/44'/111111'/<account>'/<type>/<index>`. This command will accept these as inputs:
 - `m/44'/111111'`
 - `m/44'/111111'/<account>'`
 - `m/44'/111111'/<account>'/<type>`

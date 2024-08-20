@@ -2,7 +2,7 @@ from io import BytesIO
 from typing import Union
 from hashlib import blake2b
 
-from .kaspa_utils import read, read_uint
+from .karlsen_utils import read, read_uint
 
 def hash_init() -> blake2b:
     return blake2b(digest_size=32, key=bytes("TransactionSigningHash", "ascii"))

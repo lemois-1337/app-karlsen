@@ -79,7 +79,7 @@ bool address_from_pubkey(const uint8_t public_key[static 64],
         return false;
     }
 
-    char hrp[] = "kaspa";
+    char hrp[] = "karlsen";
 
     // Choose the bigger length for public key container
     uint8_t compressed_public_key[33] = {0};
@@ -97,7 +97,7 @@ bool address_from_pubkey(const uint8_t public_key[static 64],
         return false;
     }
 
-    // First part of the address is "kaspa:"
+    // First part of the address is "karlsen:"
     memmove(address, hrp, sizeof(hrp));
     address[5] = ':';
 

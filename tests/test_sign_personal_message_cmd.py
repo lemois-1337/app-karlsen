@@ -1,6 +1,6 @@
-from application_client.kaspa_command_sender import KaspaCommandSender, Errors, InsType, P1, P2
-from application_client.kaspa_message import PersonalMessage
-from application_client.kaspa_response_unpacker import unpack_get_public_key_response, unpack_sign_message_response
+from application_client.karlsen_command_sender import KaspaCommandSender, Errors, InsType, P1, P2
+from application_client.karlsen_message import PersonalMessage
+from application_client.karlsen_response_unpacker import unpack_get_public_key_response, unpack_sign_message_response
 from ragger.backend import RaisePolicy
 from ragger.navigator import NavInsID
 from utils import ROOT_SCREENSHOT_PATH, check_signature_validity
