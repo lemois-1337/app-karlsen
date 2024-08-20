@@ -1,6 +1,6 @@
-# Kaspa Ledger Integration
+# Karlsen Ledger Integration
 
-This is the code for the Kaspa embedded app.
+This is the code for the Karlsen embedded app.
 
 ## Prerequisite
 
@@ -16,7 +16,7 @@ docker pull ghcr.io/ledgerhq/ledger-app-builder/ledger-app-builder-full
 You can then enter this development environment by executing the following command from the directory of the application `git` repository:
 
 ```shell
-cd app-kaspa
+cd app-karlsen
 docker run --rm -it -v "$(realpath .):/app" ghcr.io/ledgerhq/ledger-app-builder/ledger-app-builder-full
 ```
 
