@@ -55,7 +55,7 @@ uint8_t* input_public_key;
 /* End hacks */
 
 static void test_hash_personal_message_vector0(void **state) {
-    char message[] = "Hello Kaspa!"; // 12 chars
+    char message[] = "Hello Karlsen!"; // 12 chars
 
     uint8_t out_hash[32] = {0};
 
@@ -77,7 +77,7 @@ static void test_hash_personal_message_vector0(void **state) {
 //                                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 //                                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03};
 
-//     char message[] = "Hello Kaspa!"; // 12 chars
+//     char message[] = "Hello Karlsen!"; // 12 chars
 
 //     uint8_t out_hash[64] = {0};
 

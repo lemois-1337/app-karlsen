@@ -1,4 +1,4 @@
-# Kaspa commands
+# Karlsen commands
 
 ## Overview
 
@@ -36,7 +36,7 @@
 
 | Length <br/>(bytes) | SW | RData |
 | --- | --- | --- |
-| 5 | 0x9000 | `Kaspa (5 bytes)` in ASCII |
+| 5 | 0x9000 | `Karlsen (5 bytes)` in ASCII |
 
 Raw response looks like: `4b617370619000`
 
@@ -73,7 +73,7 @@ If you want to generate addresses using a root public key,
 `public_key` here will always be `65 bytes`, representing the uncompressed public key in DER encoding.
 It is composed of `0x04` followed by `32 bytes` for the `X` coordinate of the public key, then `32 bytes` for the `Y` coordinate.
 
-In Kaspa, you only need the `32 bytes` for the `X` coordinate as the compressed public key to generate addresses whose transactions are signed with Schnorr.
+In Karlsen, you only need the `32 bytes` for the `X` coordinate as the compressed public key to generate addresses whose transactions are signed with Schnorr.
 
 Transactions signed with ECDSA are currently not supported.
 

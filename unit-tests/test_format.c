@@ -35,12 +35,12 @@
 static void test_format_message_to_sign_simple(void **state) {
     (void) state;
 
-    char message[] = "Hello Kaspa!";
+    char message[] = "Hello Karlsen!";
     char dest[12] = {0};
 
     format_message_to_sign(dest, (int) sizeof(dest), message, (int) sizeof(message));
 
-    assert_string_equal(dest, "Hello Kaspa!");
+    assert_string_equal(dest, "Hello Karlsen!");
 }
 
 int main() {

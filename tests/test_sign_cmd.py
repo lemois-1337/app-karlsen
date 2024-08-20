@@ -1,5 +1,5 @@
 from application_client.karlsen_transaction import Transaction, TransactionInput, TransactionOutput
-from application_client.karlsen_command_sender import KaspaCommandSender, Errors, InsType, P1, P2
+from application_client.karlsen_command_sender import KarlsenCommandSender, Errors, InsType, P1, P2
 from application_client.karlsen_response_unpacker import unpack_get_public_key_response, unpack_sign_tx_response
 from ragger.backend import RaisePolicy
 from ragger.navigator import NavInsID
@@ -12,7 +12,7 @@ from utils import ROOT_SCREENSHOT_PATH, check_signature_validity
 # We will ensure that the displayed information is correct by using screenshots comparison
 def test_sign_tx_simple(firmware, backend, navigator, test_name):
     # Use the app interface instead of raw interface
-    client = KaspaCommandSender(backend)
+    client = KarlsenCommandSender(backend)
     # The path used for this entire test
     path: str = "m/44'/111111'/0'/0/0"
 
@@ -68,7 +68,7 @@ def test_sign_tx_simple(firmware, backend, navigator, test_name):
 
 def test_sign_tx_different_account(firmware, backend, navigator, test_name):
     # Use the app interface instead of raw interface
-    client = KaspaCommandSender(backend)
+    client = KarlsenCommandSender(backend)
     # The path used for this entire test
     path: str = "m/44'/111111'/1'/0/0"
 
@@ -125,7 +125,7 @@ def test_sign_tx_different_account(firmware, backend, navigator, test_name):
 
 def test_sign_tx_simple_ecdsa(firmware, backend, navigator, test_name):
     # Use the app interface instead of raw interface
-    client = KaspaCommandSender(backend)
+    client = KarlsenCommandSender(backend)
     # The path used for this entire test
     path: str = "m/44'/111111'/0'/0/0"
 
@@ -182,7 +182,7 @@ def test_sign_tx_simple_ecdsa(firmware, backend, navigator, test_name):
 
 def test_sign_tx_p2sh(firmware, backend, navigator, test_name):
     # Use the app interface instead of raw interface
-    client = KaspaCommandSender(backend)
+    client = KarlsenCommandSender(backend)
     # The path used for this entire test
     path: str = "m/44'/111111'/0'/0/0"
 
@@ -238,7 +238,7 @@ def test_sign_tx_p2sh(firmware, backend, navigator, test_name):
 
 def test_sign_tx_simple_sendint(firmware, backend, navigator, test_name):
     # Use the app interface instead of raw interface
-    client = KaspaCommandSender(backend)
+    client = KarlsenCommandSender(backend)
     # The path used for this entire test
     path: str = "m/44'/111111'/0'/0/0"
 
@@ -294,7 +294,7 @@ def test_sign_tx_simple_sendint(firmware, backend, navigator, test_name):
 
 def test_sign_tx_simple_sendmaxu64(firmware, backend, navigator, test_name):
     # Use the app interface instead of raw interface
-    client = KaspaCommandSender(backend)
+    client = KarlsenCommandSender(backend)
     # The path used for this entire test
     path: str = "m/44'/111111'/0'/0/0"
 
@@ -350,7 +350,7 @@ def test_sign_tx_simple_sendmaxu64(firmware, backend, navigator, test_name):
 
 def test_sign_tx_simple_change_idx1(firmware, backend, navigator, test_name):
     # Use the app interface instead of raw interface
-    client = KaspaCommandSender(backend)
+    client = KarlsenCommandSender(backend)
     # The path used for this entire test
     path: str = "m/44'/111111'/0'/0/0"
 
@@ -419,7 +419,7 @@ def test_sign_tx_simple_change_idx1(firmware, backend, navigator, test_name):
 
 def test_sign_tx_with_change(firmware, backend, navigator, test_name):
     # Use the app interface instead of raw interface
-    client = KaspaCommandSender(backend)
+    client = KarlsenCommandSender(backend)
     # The path used for this entire test
     path: str = "m/44'/111111'/0'/0/0"
 
@@ -485,7 +485,7 @@ def test_sign_tx_with_change(firmware, backend, navigator, test_name):
 def test_sign_tx_with_invalid_change(backend):
     backend.raise_policy = RaisePolicy.RAISE_NOTHING
 
-    client = KaspaCommandSender(backend)
+    client = KarlsenCommandSender(backend)
     # The path used for this entire test
 
     # Create the transaction that will be sent to the device for signing
@@ -523,7 +523,7 @@ def test_sign_tx_with_invalid_change(backend):
 def test_sign_tx_with_negative_fee(backend):
     backend.raise_policy = RaisePolicy.RAISE_NOTHING
 
-    client = KaspaCommandSender(backend)
+    client = KarlsenCommandSender(backend)
     # The path used for this entire test
 
     # Create the transaction that will be sent to the device for signing
@@ -557,7 +557,7 @@ def test_sign_tx_invalid_io_len(firmware, backend):
     backend.raise_policy = RaisePolicy.RAISE_NOTHING
 
     # Use the app interface instead of raw interface
-    client = KaspaCommandSender(backend)
+    client = KarlsenCommandSender(backend)
 
     # Outputs must be len 1 or 2 exactly
     # Output is 0xFF
@@ -612,7 +612,7 @@ def test_sign_tx_inconsistent_input_length_and_data(backend):
     backend.raise_policy = RaisePolicy.RAISE_NOTHING
 
     # Use the app interface instead of raw interface
-    client = KaspaCommandSender(backend)
+    client = KarlsenCommandSender(backend)
 
     tx_input = TransactionInput(
         value=1100000,
@@ -645,7 +645,7 @@ def test_sign_tx_inconsistent_output_length_and_data(backend):
     backend.raise_policy = RaisePolicy.RAISE_NOTHING
 
     # Use the app interface instead of raw interface
-    client = KaspaCommandSender(backend)
+    client = KarlsenCommandSender(backend)
 
     output = TransactionOutput(
         value=1,
@@ -675,7 +675,7 @@ def test_sign_tx_inconsistent_output_length_and_data(backend):
 # This test uses the maximum supported number of inputs per device type
 def test_sign_tx_max(firmware, backend, navigator, test_name):
     # Use the app interface instead of raw interface
-    client = KaspaCommandSender(backend)
+    client = KarlsenCommandSender(backend)
     path: str = "m/44'/111111'/0'/0/0"
 
     rapdu = client.get_public_key(path=path)
@@ -740,7 +740,7 @@ def test_sign_tx_max(firmware, backend, navigator, test_name):
 # The test will ask for a transaction signature that will be refused on screen
 def test_sign_tx_refused(firmware, backend, navigator, test_name):
     # Use the app interface instead of raw interface
-    client = KaspaCommandSender(backend)
+    client = KarlsenCommandSender(backend)
 
     transaction = Transaction(
         version=0,

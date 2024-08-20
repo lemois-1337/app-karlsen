@@ -29,7 +29,7 @@
 #define CASHADDR_P2PKH_ECDSA 1
 #define CASHADDR_P2SH        8
 
-/** Encode a Kaspa address
+/** Encode a Karlsen address
  *
  *  In:      hash:         Pointer to the hash
  *           hash_length:  Length of hash (bytes). Only 20 bytes (160 bits)

@@ -1,4 +1,4 @@
-from application_client.karlsen_command_sender import KaspaCommandSender, Errors, InsType, P1, P2
+from application_client.karlsen_command_sender import KarlsenCommandSender, Errors, InsType, P1, P2
 from application_client.karlsen_message import PersonalMessage
 from application_client.karlsen_response_unpacker import unpack_get_public_key_response, unpack_sign_message_response
 from ragger.backend import RaisePolicy
@@ -12,7 +12,7 @@ from utils import ROOT_SCREENSHOT_PATH, check_signature_validity
 # We will ensure that the displayed information is correct by using screenshots comparison
 def test_sign_message_simple(firmware, backend, navigator, test_name):
     # Use the app interface instead of raw interface
-    client = KaspaCommandSender(backend)
+    client = KarlsenCommandSender(backend)
     # The path used for this entire test
     path: str = "m/44'/111111'/0'/1/5"
 
@@ -22,7 +22,7 @@ def test_sign_message_simple(firmware, backend, navigator, test_name):
 
     address_type = 1
     address_index = 5
-    message = "Hello Kaspa!"
+    message = "Hello Karlsen!"
 
     message_data = PersonalMessage(message, address_type, address_index)
 
@@ -54,7 +54,7 @@ def test_sign_message_simple(firmware, backend, navigator, test_name):
 
 def test_sign_message_simple_different_account(firmware, backend, navigator, test_name):
     # Use the app interface instead of raw interface
-    client = KaspaCommandSender(backend)
+    client = KarlsenCommandSender(backend)
     # The path used for this entire test
     path: str = "m/44'/111111'/1'/1/5"
 
@@ -65,7 +65,7 @@ def test_sign_message_simple_different_account(firmware, backend, navigator, tes
     address_type = 1
     address_index = 5
     account = 0x80000001 # This is account 1'
-    message = "Hello Kaspa!"
+    message = "Hello Karlsen!"
 
     message_data = PersonalMessage(message, address_type, address_index, account)
 
@@ -97,7 +97,7 @@ def test_sign_message_simple_different_account(firmware, backend, navigator, tes
 
 def test_sign_message_kanji(firmware, backend, navigator, test_name):
     # Use the app interface instead of raw interface
-    client = KaspaCommandSender(backend)
+    client = KarlsenCommandSender(backend)
     # The path used for this entire test
     path: str = "m/44'/111111'/0'/1/3"
 
@@ -140,7 +140,7 @@ def test_sign_message_kanji(firmware, backend, navigator, test_name):
 def test_sign_message_too_long(firmware, backend, navigator, test_name):
     backend.raise_policy = RaisePolicy.RAISE_NOTHING
     # Use the app interface instead of raw interface
-    client = KaspaCommandSender(backend)
+    client = KarlsenCommandSender(backend)
 
     address_type = 1
     address_index = 4
@@ -154,11 +154,11 @@ def test_sign_message_too_long(firmware, backend, navigator, test_name):
 
 def test_sign_message_refused(firmware, backend, navigator, test_name):
     # Use the app interface instead of raw interface
-    client = KaspaCommandSender(backend)
+    client = KarlsenCommandSender(backend)
 
     address_type = 1
     address_index = 6
-    message = "Hello Kaspa!"
+    message = "Hello Karlsen!"
 
     message_data = PersonalMessage(message, address_type, address_index)
 

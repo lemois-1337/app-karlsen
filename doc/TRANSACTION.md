@@ -1,16 +1,16 @@
-# Kaspa Transaction Serialization
+# Karlsen Transaction Serialization
 
 ## Overview
 
-The custom transaction serialization presented is for Kaspa.
+The custom transaction serialization presented is for Karlsen.
 
 ## Amount units
 
-The base unit in Kaspa is the KAS and the smallest unit used in raw transaction is the *sompi*: 1 KAS = 100000000 sompi.
+The base unit in Karlsen is the KLS and the smallest unit used in raw transaction is the *sompi*: 1 KLS = 100000000 sompi.
 
 ## Address format
 
-Kaspa addresses begin with `karlsen:` followed by 61 base32 characters for a total of `67` bytes for Schnorr-signed and P2SH addresses. P2SH addresses are supported only as a send address by this app.
+Karlsen addresses begin with `karlsen:` followed by 61 base32 characters for a total of `67` bytes for Schnorr-signed and P2SH addresses. P2SH addresses are supported only as a send address by this app.
 
 For ECDSA-signed addresses (supported by this app only as a send address), it begins with `karlsen:` followed by 63 bytes for a total of `69` bytes.
 
@@ -33,7 +33,7 @@ In this case, the `change_address_type` has to be set to `RECEIVE`.
 
 \*\* `change_address_type` and `change_address_index` are ignored if `n_outputs == 1`. If `n_outputs == 2` then the path defined here must resolve to the same `script_public_key` in `outputs[1]`.
 
-\*\*\* `account` is the BIP44 account. A transaction can only come from a single account. Current Kaspa ecosystem only uses `0'` (or `0x80000000`) but support this is in anticipation of wider account-based support.
+\*\*\* `account` is the BIP44 account. A transaction can only come from a single account. Current Karlsen ecosystem only uses `0'` (or `0x80000000`) but support this is in anticipation of wider account-based support.
 
 ### Transaction Input
 
@@ -43,7 +43,7 @@ Total bytes: 46
 | --- | --- | --- |
 | `address_type` | 1 | 0x00 for RECEIVE or 0x01 for CHANGE address |
 | `address_index` | 4 | The index of this address in the derivation path |
-| `value` | 8 | The amount of KAS in sompi in this input |
+| `value` | 8 | The amount of KLS in sompi in this input |
 | `index` | 1 | The index of this outpoint |
 | `prev_tx_id` | 32 | The transaction ID in bytes |
 <!--
@@ -57,7 +57,7 @@ Total bytes: 43 (max)
 
 | Field | Size (bytes) | Description |
 | --- | --- | --- |
-| `value` | 8 | The amount of KAS in sompi that will go send to the address |
+| `value` | 8 | The amount of KLS in sompi that will go send to the address |
 | `script_public_key` | 35 | Schnorr: `0x20` + public_key (32 bytes) + `0xac` <br/> ECDSA: `0x20` + public_key (33 bytes) + `0xab` <br/> P2SH: `0xaa, 0x20` + script_hash (32 bytes) + `0x87` |
 
 ### Transaction Requirements
@@ -81,4 +81,4 @@ The fee is the difference between the sum of input values and the sum of the out
 
 ## Links
 
-- Kaspa Transaction: https://karlsen-mdbook.aspectron.com/transactions.html
+- Karlsen Transaction: https://karlsen-mdbook.aspectron.com/transactions.html

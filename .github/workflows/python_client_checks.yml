@@ -16,7 +16,7 @@ on:
 jobs:
 
   lint:
-    name: Kaspa client linting
+    name: Karlsen client linting
     runs-on: ubuntu-latest
     steps:
     - name: Clone

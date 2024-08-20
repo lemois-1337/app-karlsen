@@ -42,7 +42,7 @@
 bool transaction_utils_check_encoding(const uint8_t* memo, uint64_t memo_len);
 
 /**
- * Translates a given output Script Public Key to it's Kaspa Address.
+ * Translates a given output Script Public Key to it's Karlsen Address.
  *
  * @param[out] out_address
  *   Pointer to the buffer to write the address to

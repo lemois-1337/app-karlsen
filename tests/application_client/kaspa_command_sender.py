@@ -66,7 +66,7 @@ class Errors(IntEnum):
 def split_message(message: bytes, max_size: int) -> List[bytes]:
     return [message[x:x + max_size] for x in range(0, len(message), max_size)]
 
-class KaspaCommandSender:
+class KarlsenCommandSender:
     def __init__(self, backend: BackendInterface) -> None:
         self.backend = backend
 

@@ -1,4 +1,4 @@
-from application_client.karlsen_command_sender import KaspaCommandSender, Errors
+from application_client.karlsen_command_sender import KarlsenCommandSender, Errors
 from application_client.karlsen_response_unpacker import unpack_get_public_key_response
 from ragger.bip import calculate_public_key_and_chaincode, CurveChoice
 from ragger.backend import RaisePolicy
@@ -9,7 +9,7 @@ from utils import ROOT_SCREENSHOT_PATH
 # GET_PUBLIC_KEY works for valid cases in non-confirmation mode
 def test_get_public_key_no_confirm_valid(backend):
     for path in ["m/44'/111111'/0'/0/0", "m/44'/111111'/0/0/0", "m/44'/111111'/911'/0/0", "m/44'/111111'/0/1/255", "m/44'/111111'/2147483647/0/0", "m/44'/111111'/0'/0/0", "m/44'/111111'/911'/3/0", "m/44'/111111'"]:
-        client = KaspaCommandSender(backend)
+        client = KarlsenCommandSender(backend)
         response = client.get_public_key(path=path).data
         _, public_key, _, chain_code = unpack_get_public_key_response(response)
 
@@ -27,14 +27,14 @@ def test_get_public_key_no_confirm_invalid(backend):
         ("m/44'", Errors.SW_WRONG_BIP32_PATH_LEN),
         ("m/44'/111111'/2147483647/0/0/0", Errors.SW_WRONG_BIP32_PATH_LEN)
     ]:
-        client = KaspaCommandSender(backend)
+        client = KarlsenCommandSender(backend)
         
         assert client.get_public_key(path=test_case[0]).status == test_case[1]
 
 
 # In this test we check that the GET_PUBLIC_KEY works in confirmation mode
 def test_get_public_key_confirm_accepted(firmware, backend, navigator, test_name):
-    client = KaspaCommandSender(backend)
+    client = KarlsenCommandSender(backend)
     path = "m/44'/111111'/0'/0/0"
     with client.get_public_key_with_confirmation(path=path):
         if firmware.device.startswith("nano"):
@@ -65,7 +65,7 @@ def test_get_public_key_confirm_accepted(firmware, backend, navigator, test_name
 
 # In this test we check that the GET_PUBLIC_KEY in confirmation mode replies an error if the user refuses
 def test_get_public_key_confirm_refused(firmware, backend, navigator, test_name):
-    client = KaspaCommandSender(backend)
+    client = KarlsenCommandSender(backend)
     path = "m/44'/111111'/0'/0/0"
 
     if firmware.device.startswith("nano"):

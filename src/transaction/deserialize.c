@@ -135,7 +135,7 @@ parser_status_e transaction_input_deserialize(buffer_t *buf, transaction_input_t
 }
 
 parser_status_e transaction_deserialize(buffer_t *buf, transaction_t *tx, uint32_t *bip32_path) {
-    if (KASPA_MAX_BIP32_PATH_LEN < 5) {
+    if (KARLSEN_MAX_BIP32_PATH_LEN < 5) {
         return HEADER_PARSING_ERROR;
     }
 

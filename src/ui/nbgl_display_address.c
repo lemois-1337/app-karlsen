@@ -102,7 +102,7 @@ int ui_display_address() {
     snprintf(g_address, sizeof(g_address), "%.*s", sizeof(address), address);
 
     nbgl_useCaseReviewStart(&C_stax_app_karlsen_64px,
-                            "Verify KAS address",
+                            "Verify KLS address",
                             NULL,
                             "Cancel",
                             continue_review,

@@ -24,7 +24,7 @@
 #pragma once
 
 /**
- * Instruction class of the Kaspa application.
+ * Instruction class of the Karlsen application.
  */
 #define CLA 0xE0
 
@@ -50,7 +50,7 @@
 #define MAX_DER_SIG_LEN 64
 
 /**
- * Exponent used to convert sompi to KAS unit (N KAS = N * 10^8 sompi).
+ * Exponent used to convert sompi to KLS unit (N KLS = N * 10^8 sompi).
  */
 #define EXPONENT_SMALLEST_UNIT 8
 
@@ -69,4 +69,4 @@
 
 #define MAX_OUTPUT_COUNT             2
 #define SCRIPT_PUBLIC_KEY_BUFFER_LEN 40
-#define KASPA_MAX_BIP32_PATH_LEN     5
+#define KARLSEN_MAX_BIP32_PATH_LEN     5
