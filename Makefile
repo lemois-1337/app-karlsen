@@ -25,7 +25,7 @@ include $(BOLOS_SDK)/Makefile.defines
 #        Mandatory configuration       #
 ########################################
 # Application name
-APPNAME = "Kaspa"
+APPNAME = "Karlsen"
 
 # Application version
 APPVERSION_M = 1
@@ -49,10 +49,10 @@ APP_SOURCE_PATH += src
 
 # Application icons following guidelines:
 # https://developers.ledger.com/docs/embedded-app/design-requirements/#device-icon
-ICON_NANOS = icons/nanos_kaspa_logo.gif
-ICON_NANOX = icons/nanox_kaspa_logo.gif
-ICON_NANOSP = icons/nanox_kaspa_logo.gif
-ICON_STAX = icons/stax_kaspa_logo_32px.gif
+ICON_NANOS = icons/nanos_karlsen_logo.gif
+ICON_NANOX = icons/nanox_karlsen_logo.gif
+ICON_NANOSP = icons/nanox_karlsen_logo.gif
+ICON_STAX = icons/stax_karlsen_logo_32px.gif
 
 # Application allowed derivation curves.
 # Possibles curves are: secp256k1, secp256r1, ed25519 and bls12381g1
@@ -67,7 +67,7 @@ CURVE_APP_LOAD_PARAMS = secp256k1
 # and SLIP-0044 standards.
 # If your app needs it, you can specify multiple path by using:
 # `PATH_APP_LOAD_PARAMS = "44'/1'" "45'/1'"`
-PATH_APP_LOAD_PARAMS = "44'/111111'"   # purpose=coin(44) / coin_type=Testnet(1)
+PATH_APP_LOAD_PARAMS = "44'/121337'"   # purpose=coin(44) / coin_type=Testnet(1)
 
 # Setting to allow building variant applications
 # - <VARIANT_PARAM> is the name of the parameter which should be set
@@ -76,7 +76,7 @@ PATH_APP_LOAD_PARAMS = "44'/111111'"   # purpose=coin(44) / coin_type=Testnet(1)
 #   * It must at least contains one value.
 #   * Values can be the app ticker or anything else but should be unique.
 VARIANT_PARAM = COIN
-VARIANT_VALUES = KAS
+VARIANT_VALUES = KLS
 
 # Enabling DEBUG flag will enable PRINTF and disable optimizations
 #DEBUG = 1
