@@ -36,9 +36,9 @@
 
 | Length <br/>(bytes) | SW | RData |
 | --- | --- | --- |
-| 5 | 0x9000 | `Karlsen (5 bytes)` in ASCII |
+| 7 | 0x9000 | `Karlsen (7 bytes)` in ASCII |
 
-Raw response looks like: `4b617370619000`
+Raw response looks like: `4b61726c73656e9000`
 
 ## GET_PUBLIC_KEY
 
@@ -57,7 +57,7 @@ Keys for karlsen normally use the derivation path `m/44'/121337'/<account>'/<typ
 | CData Part | Description |
 | --- | --- |
 | `purpose` | Must be `44'` or `0x80000002c` |
-| `coin_type` | Must be `121337'` or `0x8001b207` |
+| `coin_type` | Must be `121337'` or `0x8001d9f9` |
 | `account` | Current wallets all use `0x80000000` (aka. `0'`) for default account but any value from `0x80000000` to `0xFFFFFFFF` is accepted if passed |
 | `type` | Current wallets use either `0x00000000` for Receive Address or `0x00000001` for Change Address, but any value from `0x00000000` to `0xFFFFFFFF` is accepted if passed |
 | `index` | Any value from `0x00000000` to `0xFFFFFFFF` if passed |
@@ -110,6 +110,7 @@ Transactions signed with ECDSA are currently not supported.
 5. If approved, the first RAPDU with the signature of the first input index will be sent back to the user.
 6. While `has_more` is non-zero, send the `sign_tx` APDU with `P1 = 0x03` to ask for the next signature.
 7. When there are no more signatures, `has_more` in the RAPDU will be `0x00` and the context will be reset.
+
 ### Response
 
 | Length <br/>(bytes) | SW | RData |

@@ -59,7 +59,7 @@ int handler_get_public_key(buffer_t *cdata, bool display) {
         return io_send_sw(SW_WRONG_BIP32_PURPOSE);
     }
 
-    if (G_context.bip32_path[1] != (uint32_t) 0x8001b207) {
+    if (G_context.bip32_path[1] != (uint32_t) 0x8001d9f9) {
         return io_send_sw(SW_WRONG_BIP32_COIN_TYPE);
     }
 

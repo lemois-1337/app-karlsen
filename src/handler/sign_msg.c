@@ -95,7 +95,7 @@ int handler_sign_msg(buffer_t *cdata) {
     }
 
     G_context.bip32_path[0] = 0x8000002C;
-    G_context.bip32_path[1] = 0x8001b207;
+    G_context.bip32_path[1] = 0x8001d9f9;
     G_context.bip32_path[2] = G_context.msg_info.account;
     G_context.bip32_path[3] = (uint32_t)(G_context.msg_info.address_type);
     G_context.bip32_path[4] = G_context.msg_info.address_index;

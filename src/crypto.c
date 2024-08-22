@@ -65,7 +65,7 @@ int crypto_sign_transaction(void) {
 
     // 44'/121337'/account'/ address_type / address_index
     G_context.bip32_path[0] = 0x8000002C;
-    G_context.bip32_path[1] = 0x8001b207;
+    G_context.bip32_path[1] = 0x8001d9f9;
     G_context.bip32_path[2] = G_context.tx_info.transaction.account;
     G_context.bip32_path[3] = (uint32_t)(txin->address_type);
     G_context.bip32_path[4] = txin->address_index;
