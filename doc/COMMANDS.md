@@ -48,16 +48,16 @@ Raw response looks like: `4b617370619000`
 | --- | --- | --- | --- | --- | --- |
 | 0xE0 | 0x05 | 0x00 (no display) <br> 0x01 (display) | 0x00 | 0x15 | `path len (1 byte)` \|\|<br>`purpose (4 bytes)` \|\|<br> `coin_type (4 bytes)` \|\|<br> `account (4 bytes)` \|\|<br> `type (4 bytes)` \|\|<br>`index (4 bytes)` |
 
-Keys for karlsen normally use the derivation path `m/44'/111111'/<account>'/<type>/<index>`. This command will accept these as inputs:
-- `m/44'/111111'`
-- `m/44'/111111'/<account>'`
-- `m/44'/111111'/<account>'/<type>`
-- `m/44'/111111'/<account>'/<type>/<index>`
+Keys for karlsen normally use the derivation path `m/44'/121337'/<account>'/<type>/<index>`. This command will accept these as inputs:
+- `m/44'/121337'`
+- `m/44'/121337'/<account>'`
+- `m/44'/121337'/<account>'/<type>`
+- `m/44'/121337'/<account>'/<type>/<index>`
 
 | CData Part | Description |
 | --- | --- |
 | `purpose` | Must be `44'` or `0x80000002c` |
-| `coin_type` | Must be `111111'` or `0x8001b207` |
+| `coin_type` | Must be `121337'` or `0x8001b207` |
 | `account` | Current wallets all use `0x80000000` (aka. `0'`) for default account but any value from `0x80000000` to `0xFFFFFFFF` is accepted if passed |
 | `type` | Current wallets use either `0x00000000` for Receive Address or `0x00000001` for Change Address, but any value from `0x00000000` to `0xFFFFFFFF` is accepted if passed |
 | `index` | Any value from `0x00000000` to `0xFFFFFFFF` if passed |
@@ -178,7 +178,7 @@ Transactions signed with ECDSA are currently not supported.
 | 0xB007 | `SW_BAD_STATE` | Security issue with bad state |
 | 0xB008 | `SW_SIGNATURE_FAIL` | Signature of raw transaction failed |
 | 0xB009 | `SW_WRONG_BIP32_PURPOSE` | `Purpose` must be `44'` |
-| 0xB00A | `SW_WRONG_BIP32_COIN_TYPE` | `Coin Type` must be `111111'` |
+| 0xB00A | `SW_WRONG_BIP32_COIN_TYPE` | `Coin Type` must be `121337'` |
 | 0xB00B | `SW_WRONG_BIP32_PATH_LEN` | Path length must be `5` |
 | 0xB010 | `SW_MESSAGE_PARSING_FAIL` | Unable to parse message data |
 | 0xB011 | `SW_MESSAGE_TOO_LONG` | Message len greater than max |

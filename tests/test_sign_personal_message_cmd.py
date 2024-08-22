@@ -14,7 +14,7 @@ def test_sign_message_simple(firmware, backend, navigator, test_name):
     # Use the app interface instead of raw interface
     client = KarlsenCommandSender(backend)
     # The path used for this entire test
-    path: str = "m/44'/111111'/0'/1/5"
+    path: str = "m/44'/121337'/0'/1/5"
 
     # First we need to get the public key of the device in order to build the transaction
     rapdu = client.get_public_key(path=path)
@@ -56,7 +56,7 @@ def test_sign_message_simple_different_account(firmware, backend, navigator, tes
     # Use the app interface instead of raw interface
     client = KarlsenCommandSender(backend)
     # The path used for this entire test
-    path: str = "m/44'/111111'/1'/1/5"
+    path: str = "m/44'/121337'/1'/1/5"
 
     # First we need to get the public key of the device in order to build the transaction
     rapdu = client.get_public_key(path=path)
@@ -99,7 +99,7 @@ def test_sign_message_kanji(firmware, backend, navigator, test_name):
     # Use the app interface instead of raw interface
     client = KarlsenCommandSender(backend)
     # The path used for this entire test
-    path: str = "m/44'/111111'/0'/1/3"
+    path: str = "m/44'/121337'/0'/1/3"
 
     # First we need to get the public key of the device in order to build the transaction
     rapdu = client.get_public_key(path=path)

@@ -14,7 +14,7 @@ def test_sign_tx_simple(firmware, backend, navigator, test_name):
     # Use the app interface instead of raw interface
     client = KarlsenCommandSender(backend)
     # The path used for this entire test
-    path: str = "m/44'/111111'/0'/0/0"
+    path: str = "m/44'/121337'/0'/0/0"
 
     # First we need to get the public key of the device in order to build the transaction
     rapdu = client.get_public_key(path=path)
@@ -70,7 +70,7 @@ def test_sign_tx_different_account(firmware, backend, navigator, test_name):
     # Use the app interface instead of raw interface
     client = KarlsenCommandSender(backend)
     # The path used for this entire test
-    path: str = "m/44'/111111'/1'/0/0"
+    path: str = "m/44'/121337'/1'/0/0"
 
     # First we need to get the public key of the device in order to build the transaction
     rapdu = client.get_public_key(path=path)
@@ -127,7 +127,7 @@ def test_sign_tx_simple_ecdsa(firmware, backend, navigator, test_name):
     # Use the app interface instead of raw interface
     client = KarlsenCommandSender(backend)
     # The path used for this entire test
-    path: str = "m/44'/111111'/0'/0/0"
+    path: str = "m/44'/121337'/0'/0/0"
 
     # First we need to get the public key of the device in order to build the transaction
     rapdu = client.get_public_key(path=path)
@@ -184,7 +184,7 @@ def test_sign_tx_p2sh(firmware, backend, navigator, test_name):
     # Use the app interface instead of raw interface
     client = KarlsenCommandSender(backend)
     # The path used for this entire test
-    path: str = "m/44'/111111'/0'/0/0"
+    path: str = "m/44'/121337'/0'/0/0"
 
     # First we need to get the public key of the device in order to build the transaction
     rapdu = client.get_public_key(path=path)
@@ -240,7 +240,7 @@ def test_sign_tx_simple_sendint(firmware, backend, navigator, test_name):
     # Use the app interface instead of raw interface
     client = KarlsenCommandSender(backend)
     # The path used for this entire test
-    path: str = "m/44'/111111'/0'/0/0"
+    path: str = "m/44'/121337'/0'/0/0"
 
     # First we need to get the public key of the device in order to build the transaction
     rapdu = client.get_public_key(path=path)
@@ -296,7 +296,7 @@ def test_sign_tx_simple_sendmaxu64(firmware, backend, navigator, test_name):
     # Use the app interface instead of raw interface
     client = KarlsenCommandSender(backend)
     # The path used for this entire test
-    path: str = "m/44'/111111'/0'/0/0"
+    path: str = "m/44'/121337'/0'/0/0"
 
     # First we need to get the public key of the device in order to build the transaction
     rapdu = client.get_public_key(path=path)
@@ -352,13 +352,13 @@ def test_sign_tx_simple_change_idx1(firmware, backend, navigator, test_name):
     # Use the app interface instead of raw interface
     client = KarlsenCommandSender(backend)
     # The path used for this entire test
-    path: str = "m/44'/111111'/0'/0/0"
+    path: str = "m/44'/121337'/0'/0/0"
 
     # First we need to get the public key of the device in order to build the transaction
     rapdu = client.get_public_key(path=path)
     _, public_key, _, _ = unpack_get_public_key_response(rapdu.data)
 
-    change_path: str = "m/44'/111111'/0'/1/1"
+    change_path: str = "m/44'/121337'/0'/1/1"
 
     # First we need to get the public key of the device in order to build the transaction
     change_rapdu = client.get_public_key(path=change_path)
@@ -421,7 +421,7 @@ def test_sign_tx_with_change(firmware, backend, navigator, test_name):
     # Use the app interface instead of raw interface
     client = KarlsenCommandSender(backend)
     # The path used for this entire test
-    path: str = "m/44'/111111'/0'/0/0"
+    path: str = "m/44'/121337'/0'/0/0"
 
     # First we need to get the public key of the device in order to build the transaction
     rapdu = client.get_public_key(path=path)
@@ -676,7 +676,7 @@ def test_sign_tx_inconsistent_output_length_and_data(backend):
 def test_sign_tx_max(firmware, backend, navigator, test_name):
     # Use the app interface instead of raw interface
     client = KarlsenCommandSender(backend)
-    path: str = "m/44'/111111'/0'/0/0"
+    path: str = "m/44'/121337'/0'/0/0"
 
     rapdu = client.get_public_key(path=path)
     _, public_key, _, _ = unpack_get_public_key_response(rapdu.data)

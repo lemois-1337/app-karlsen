@@ -8,7 +8,7 @@ from utils import ROOT_SCREENSHOT_PATH
 
 # GET_PUBLIC_KEY works for valid cases in non-confirmation mode
 def test_get_public_key_no_confirm_valid(backend):
-    for path in ["m/44'/111111'/0'/0/0", "m/44'/111111'/0/0/0", "m/44'/111111'/911'/0/0", "m/44'/111111'/0/1/255", "m/44'/111111'/2147483647/0/0", "m/44'/111111'/0'/0/0", "m/44'/111111'/911'/3/0", "m/44'/111111'"]:
+    for path in ["m/44'/121337'/0'/0/0", "m/44'/121337'/0/0/0", "m/44'/121337'/911'/0/0", "m/44'/121337'/0/1/255", "m/44'/121337'/2147483647/0/0", "m/44'/121337'/0'/0/0", "m/44'/121337'/911'/3/0", "m/44'/121337'"]:
         client = KarlsenCommandSender(backend)
         response = client.get_public_key(path=path).data
         _, public_key, _, chain_code = unpack_get_public_key_response(response)
@@ -25,7 +25,7 @@ def test_get_public_key_no_confirm_invalid(backend):
         ("m/33'/0'/0'/0/0", Errors.SW_WRONG_BIP32_PURPOSE),
         ("m/44'/0'/0/0/0", Errors.SW_WRONG_BIP32_COIN_TYPE),
         ("m/44'", Errors.SW_WRONG_BIP32_PATH_LEN),
-        ("m/44'/111111'/2147483647/0/0/0", Errors.SW_WRONG_BIP32_PATH_LEN)
+        ("m/44'/121337'/2147483647/0/0/0", Errors.SW_WRONG_BIP32_PATH_LEN)
     ]:
         client = KarlsenCommandSender(backend)
         
@@ -35,7 +35,7 @@ def test_get_public_key_no_confirm_invalid(backend):
 # In this test we check that the GET_PUBLIC_KEY works in confirmation mode
 def test_get_public_key_confirm_accepted(firmware, backend, navigator, test_name):
     client = KarlsenCommandSender(backend)
-    path = "m/44'/111111'/0'/0/0"
+    path = "m/44'/121337'/0'/0/0"
     with client.get_public_key_with_confirmation(path=path):
         if firmware.device.startswith("nano"):
             navigator.navigate_until_text_and_compare(NavInsID.RIGHT_CLICK,
@@ -66,7 +66,7 @@ def test_get_public_key_confirm_accepted(firmware, backend, navigator, test_name
 # In this test we check that the GET_PUBLIC_KEY in confirmation mode replies an error if the user refuses
 def test_get_public_key_confirm_refused(firmware, backend, navigator, test_name):
     client = KarlsenCommandSender(backend)
-    path = "m/44'/111111'/0'/0/0"
+    path = "m/44'/121337'/0'/0/0"
 
     if firmware.device.startswith("nano"):
         with client.get_public_key_with_confirmation(path=path):

@@ -114,7 +114,7 @@ function load_to_device() {
         python3 -m ledgerblue.loadApp \
             --curve secp256k1 \
             --appFlags 0x000 \
-            --path "44'/111111'" \
+            --path "44'/121337'" \
             --tlv \
             --targetId 0x33000004 \
             --fileName bin/app.hex \
@@ -127,7 +127,7 @@ function load_to_device() {
         python3 -m ledgerblue.loadApp \
             --curve secp256k1 \
             --appFlags 0x000 \
-            --path "44'/111111'" \
+            --path "44'/121337'" \
             --tlv \
             --targetId 0x33100004 \
             --fileName bin/app.hex \
@@ -142,7 +142,7 @@ function load_to_device() {
         python3 -m ledgerblue.loadApp \
             --curve secp256k1 \
             --appFlags 0x000 \
-            --path "44'/111111'" \
+            --path "44'/121337'" \
             --tlv \
             --targetId 0x31100004 \
             --fileName bin/app.hex \
