@@ -6,18 +6,18 @@ This is the code for the Karlsen embedded app.
 
 ### With the docker image builder
 
-The app-builder docker image [from this repository](https://github.com/LedgerHQ/ledger-app-builder) contains all needed tools and library to build and load an application.
+The app-builder docker image [from this repository](https://github.com/gonner22/ledger-app-builder) contains all needed tools and library to build and load an application.
 You can download it from the ghcr.io docker repository:
 
 ```shell
-docker pull ghcr.io/ledgerhq/ledger-app-builder/ledger-app-builder-full
+docker pull ghcr.io/gonner22/ledger-app-builder/ledger-app-builder-legacy:latest
 ```
 
 You can then enter this development environment by executing the following command from the directory of the application `git` repository:
 
 ```shell
 cd app-karlsen
-docker run --rm -it -v "$(realpath .):/app" ghcr.io/ledgerhq/ledger-app-builder/ledger-app-builder-full
+docker run --rm -ti -v "$(realpath .):/app" --user root ghcr.io/gonner22/ledger-app-builder/ledger-app-builder-legacy:latest
 ```
 
 The application's code will be available from inside the docker container, you can proceed to the following compilation steps to build your app.
@@ -44,7 +44,7 @@ the process outputs HTML and LaTeX documentations in `doc/html` and `doc/latex` 
 The flow processed in [GitHub Actions](https://github.com/features/actions) is the following:
 
 - Code formatting with [clang-format](http://clang.llvm.org/docs/ClangFormat.html)
-- Compilation of the application for Ledger Nano S in [ledger-app-builder](https://github.com/LedgerHQ/ledger-app-builder)
+- Compilation of the application for Ledger Nano S in [ledger-app-builder](https://github.com/gonner22/ledger-app-builder)
 - Unit tests of C functions with [cmocka](https://cmocka.org/) (see [unit-tests/](unit-tests/))
 - End-to-end tests with [Speculos](https://github.com/LedgerHQ/speculos) emulator (see [tests/](tests/))
 - Code coverage with [gcov](https://gcc.gnu.org/onlinedocs/gcc/Gcov.html)/[lcov](http://ltp.sourceforge.net/coverage/lcov.php) and upload to [codecov.io](https://about.codecov.io)
