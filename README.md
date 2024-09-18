@@ -6,18 +6,18 @@ This is the code for the Karlsen embedded app.
 
 ### With the docker image builder
 
-The app-builder docker image [from this repository](https://github.com/gonner22/ledger-app-builder) contains all needed tools and library to build and load an application.
+The app-builder docker image [from this repository](https://github.com/karlsen-network/ledger-app-builder) contains all needed tools and library to build and load an application.
 You can download it from the ghcr.io docker repository:
 
 ```shell
-docker pull ghcr.io/gonner22/ledger-app-builder/ledger-app-builder-legacy:latest
+docker pull ghcr.io/karlsen-network/ledger-app-builder/ledger-app-builder-legacy:latest
 ```
 
 You can then enter this development environment by executing the following command from the directory of the application `git` repository:
 
 ```shell
 cd app-karlsen
-docker run --rm -ti -v "$(realpath .):/app" --user root ghcr.io/gonner22/ledger-app-builder/ledger-app-builder-legacy:latest
+docker run --rm -ti -v "$(realpath .):/app" --user root ghcr.io/karlsen-network/ledger-app-builder/ledger-app-builder-legacy:latest
 ```
 
 The application's code will be available from inside the docker container, you can proceed to the following compilation steps to build your app.
