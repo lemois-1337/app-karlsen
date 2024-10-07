@@ -111,7 +111,7 @@ typedef struct {
         transaction_ctx_t tx_info;    /// transaction context
         message_sign_ctx_t msg_info;  /// message sign context
     };
-    request_type_e req_type;                        /// user request
+    request_type_e req_type;                          /// user request
     uint32_t bip32_path[KARLSEN_MAX_BIP32_PATH_LEN];  /// BIP32 path
-    uint8_t bip32_path_len;                         /// length of BIP32 path
+    uint8_t bip32_path_len;                           /// length of BIP32 path
 } global_ctx_t;
